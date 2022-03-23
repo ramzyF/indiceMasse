@@ -1,0 +1,20 @@
+<div class="welcome">
+  {% if request.user.is_authenticated %}
+    <span>Bienvenue sur notre site {{ user.name }}!</span>
+    <style>
+      .welcome{
+        position: absolute;
+        top: 50px;
+        left: 100px;
+        color: white;
+        font-size: 1.2em;
+        font-weight: 800;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        color:white;
+        text-decoration: none;
+
+      }
+    </style>
+  {% endif %}
+
+</div> 

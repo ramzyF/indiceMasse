@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Report</title>
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      .main-container{
+        position: absolute;
+        top: 10%;
+        left: 25%;
+        padding-bottom: 200px;
+      }
+      .title{
+        box-shadow: 1px 1px 2px rgb(87, 85, 85);
+      }
+      .title span{
+        color: #d9266b;
+        font-size: 2em;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      div.info{
+        position: relative;
+        top: 10px;
+        left: 8%;
+      }
+
+      .info p{
+        font-size: 2em;
+        color: #033f69;
+      }
+      .info span{
+        color: rgb(211, 138, 2);
+      }
+
+      .author{
+        position: absolute;
+        bottom: 0px;
+        right: 10px;
+        color: #033f69;
+        font-size: 20px;
+      }
+
+    </style>
+    <!--  #2691d9 -->
+  </head>
+  <body>
+    <div class="main-container">
+
+      <div class="title">
+        <span>MON IMC</span>
+      </div>
+      <div class="info">
+        <p>Nom: <span>{{username}}</span></p>
+        <p>Ville: <span>{{city}}</span></p>
+        <p>IMC: <span>{{imc}}Kg/m<sup>2</sup></span></p>
+        <p>Statut: <span>{{statut}}</span></p>
+        <div class="conseil">
+          <p>Conseil: <span>{{conseil}}</span></p>
+        </div>
+      </div>
+      <p class="author">Généré sur mon https://www.imc.com</p>
+
+    </div>
+  </body>
+</html>

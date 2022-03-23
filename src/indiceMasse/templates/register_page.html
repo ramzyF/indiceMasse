@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+
+{% include 'navbar.html' %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="main-container">
+    <div class="form-overlay"></div>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <span class="title-register">Créer un compte</span>
+      <div class="text-field">
+        {{form.name}}
+        {{form.name.label_tag}}
+      </div>
+
+      <div class="text-field">
+        {{form.email}}
+        {{form.email.label_tag}}
+      </div>
+
+      <div class="text-field">
+        {{form.tel_number}}
+        {{form.tel_number.label_tag}}
+      </div>
+
+      <div class="text-field">
+        {{form.city}}
+        {{form.city.label_tag}}
+      </div>
+
+      
+      <div class="text-field">
+        {{form.password1}}
+        {{form.password1.label_tag}}
+      </div>
+
+      <div class="text-field">
+        {{form.password2}}
+        {{form.password2.label_tag}}
+      </div>
+      <input type="submit" value="S'enregistrer">
+      <div class="login-link">
+        <span>Vous avez déjà un compte? <a href="{% url 'signin' %}">Connectez-vous</a></span>
+      </div>
+  </form>
+  </div>
+
+
+{% if form.errors%}
+
+<div class="error-message">
+  {% if form.errors %}
+    {% for field in form %}
+      {% for error in field.errors %} 
+          <li><strong>{{ error|escape }}</strong></li>
+  
+      {% endfor %}
+    {% endfor %}
+  {% endif %}
+</div>
+{% endif %}
+
+
+{% endblock %}
